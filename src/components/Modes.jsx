@@ -101,7 +101,7 @@ const Modes = () => {
                         className="w-7 h-7"
                       />
                     )}
-                    <h3 className="text-2xl font-bold anton-regular uppercase text-white">
+                    <h3 className="text-2xl font-bold anton-regular uppercase text-amber-400">
                       {mode.name}
                     </h3>
                   </div>
@@ -147,7 +147,7 @@ const Modes = () => {
                         className="w-7 h-7"
                       />
                     )}
-                    <h3 className="text-2xl font-bold anton-regular uppercase text-white">
+                    <h3 className="text-2xl font-bold anton-regular uppercase text-amber-400">
                       {mode.name}
                     </h3>
                   </div>
