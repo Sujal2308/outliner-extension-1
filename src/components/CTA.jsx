@@ -36,17 +36,37 @@ const CTA = () => {
               href="https://chrome.google.com/webstore"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white text-blue-600 px-10 py-5 rounded-xl font-bold text-xl hover:bg-gray-100 transition-all duration-300 shadow-2xl hover:shadow-3xl flex items-center space-x-3 w-full sm:w-auto justify-center"
+              className="bg-white text-blue-600 px-10 py-5 rounded-none font-bold anton-regular text-xl hover:bg-gray-100 transition-all duration-300 shadow-2xl hover:shadow-3xl flex items-center space-x-3 w-full sm:w-auto justify-center"
             >
-              <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+              <svg
+                className="w-7 h-7"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path d="M12 16c-.28 0-.53-.11-.71-.29l-3-3a1 1 0 111.42-1.42L11 12.59V4a1 1 0 112 0v8.59l1.29-1.3a1 1 0 011.42 1.42l-3 3A1 1 0 0112 16z" />
+                <path d="M5 20a1 1 0 000 2h14a1 1 0 000-2H5z" />
               </svg>
               <span>Install Free Now</span>
             </a>
 
-            <button className="bg-transparent border-2 border-white text-white px-10 py-5 rounded-xl font-bold text-xl hover:bg-white hover:text-blue-600 transition-all duration-300 w-full sm:w-auto">
-              View on GitHub
-            </button>
+            <a
+              href="https://github.com/Sujal2308/outliner-extension-1"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View Outliner on GitHub"
+              className="bg-transparent border-2 border-white text-white px-6 py-5 rounded-none font-bold anton-regular text-xl w-full sm:w-auto flex items-center justify-center space-x-3"
+            >
+              <svg
+                className="w-6 h-6 text-white"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.111.82-.261.82-.579 0-.287-.011-1.244-.017-2.249-3.338.726-4.042-1.614-4.042-1.614-.546-1.387-1.333-1.757-1.333-1.757-1.089-.745.083-.73.083-.73 1.205.085 1.84 1.238 1.84 1.238 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.304.76-1.604-2.665-.304-5.466-1.333-5.466-5.931 0-1.31.469-2.381 1.236-3.221-.124-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.29-1.552 3.295-1.23 3.295-1.23.655 1.653.243 2.874.119 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.805 5.624-5.475 5.921.43.372.814 1.103.814 2.222 0 1.606-.015 2.901-.015 3.293 0 .32.216.694.825.576C20.565 21.796 24 17.299 24 12 24 5.37 18.63 0 12 0z" />
+              </svg>
+              <span>View on GitHub</span>
+            </a>
           </div>
 
           {/* Trust badges moved to bottom-centered container */}
