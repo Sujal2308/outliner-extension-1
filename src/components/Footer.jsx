@@ -1,14 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const [feedbackText, setFeedbackText] = useState("");
 
+  const submitFeedback = (e) => {
+    e.preventDefault();
+    const body = feedbackText;
+    const mailto = `mailto:feedback@outliner.app?subject=${encodeURIComponent(
+      "Outliner website feedback"
+    )}&body=${encodeURIComponent(body)}`;
+    // Use mailto as a fallback so no backend is required.
+    window.location.href = mailto;
+    // clear form after launching mail client
+    setFeedbackText("");
+  };
   return (
     <footer className="bg-gray-900 text-gray-300 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
           {/* Brand */}
-          <div className="col-span-1 md:col-span-2">
+          <div className="col-span-1 md:col-span-1">
             <div className="flex items-center space-x-3 mb-4">
               <img
                 src="/pencil.png"
@@ -73,84 +85,49 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-white font-bold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              <li>
-                <a href="#" className="hover:text-blue-400 transition-colors">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#features"
-                  className="hover:text-blue-400 transition-colors"
-                >
-                  Features
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#how-it-works"
-                  className="hover:text-blue-400 transition-colors"
-                >
-                  How It Works
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-blue-400 transition-colors">
-                  Pricing
-                </a>
-              </li>
-            </ul>
-          </div>
+          {/* Inline feedback area placed where Quick Links & Resources were removed */}
+          <div className="col-span-1 md:col-span-1">
+            <div className="flex items-center mb-3">
+              <h4 className="text-white text-lg font-semibold m-0">
+                Send us feedback
+              </h4>
+              <img
+                src="/feedback.png"
+                alt="feedback"
+                className="w-6 h-6 ml-3"
+              />
+            </div>
+            <form onSubmit={submitFeedback} className="space-y-3">
+              <textarea
+                value={feedbackText}
+                onChange={(e) => setFeedbackText(e.target.value)}
+                required
+                rows={4}
+                placeholder="Tell us what you liked or how we can improve..."
+                className="w-full p-3 rounded bg-gray-800 text-gray-100"
+              />
 
-          {/* Resources */}
-          <div>
-            <h3 className="text-white font-bold mb-4">Resources</h3>
-            <ul className="space-y-2">
-              <li>
-                <a href="#" className="hover:text-blue-400 transition-colors">
-                  Documentation
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-blue-400 transition-colors">
-                  Support
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-blue-400 transition-colors">
-                  Privacy Policy
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-blue-400 transition-colors">
-                  Terms of Service
-                </a>
-              </li>
-            </ul>
+              <div className="flex items-center justify-between w-full">
+                <button
+                  type="submit"
+                  className="px-4 py-2 rounded font-bold text-black"
+                  style={{ backgroundColor: "tomato", fontFamily: "'Jost', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial" }}
+                >
+                  Submit
+                </button>
+
+                <div className="flex items-center space-x-2 text-green-300">
+                  <span className="inline-block w-3 h-3 rounded-full bg-green-400 animate-pulse" aria-hidden="true" />
+                  <span className="text-sm font-medium">All systems operational</span>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row items-center justify-between">
-          <p className="text-gray-400 text-sm mb-4 md:mb-0">
-            © {currentYear} Outliner. All rights reserved. Made with ❤️ for
-            productivity enthusiasts.
-          </p>
-          <div className="flex items-center space-x-6 text-sm">
-            <a href="#" className="hover:text-blue-400 transition-colors">
-              Status
-            </a>
-            <a href="#" className="hover:text-blue-400 transition-colors">
-              Changelog
-            </a>
-            <a href="#" className="hover:text-blue-400 transition-colors">
-              Blog
-            </a>
-          </div>
+        {/* Minimal copyright at bottom */}
+        <div className="pt-8 border-t border-gray-800">
+          <p className="text-gray-400 text-xs text-center">© {currentYear} Outliner — Read less, know more.</p>
         </div>
       </div>
     </footer>
