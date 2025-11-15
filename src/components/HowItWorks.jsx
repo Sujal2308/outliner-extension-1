@@ -53,7 +53,7 @@ const HowItWorks = () => {
   return (
     <section
       id="howitworks"
-      className="relative min-h-screen bg-white pt-32 pb-20 px-4 sm:px-6 lg:px-8"
+      className="relative min-h-screen bg-white pt-10 sm:pt-16 pb-20 px-4 sm:px-6 lg:px-8"
     >
       {/* Background blobs (like Hero) */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
