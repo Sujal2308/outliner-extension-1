@@ -49,7 +49,7 @@ const Hero = () => {
               Summarize Any Webpage
               <br />
               <span
-                className="text-white px-4 py-2 rounded-lg inline-block mt-3"
+                className="text-white px-4 py-2 rounded-lg inline-block mt-3 transition-all duration-300"
                 style={{ backgroundColor: "#ff6347" }}
               >
                 <TextRotate
