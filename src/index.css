@@ -60,3 +60,13 @@ body {
     @apply bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2;
   }
 }
+
+/* Disable hover effects on feature cards on mobile only */
+@media (max-width: 639px) {
+  .no-hover-mobile:hover,
+  .no-hover-mobile:active {
+    box-shadow: theme("boxShadow.lg") !important;
+    transform: translateY(0) !important;
+    background-color: rgba(255, 255, 255, 0.8) !important;
+  }
+}

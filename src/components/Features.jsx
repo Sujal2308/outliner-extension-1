@@ -59,7 +59,7 @@ const Features = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`bg-white/80 backdrop-blur-md p-8 rounded-2xl border border-white/30 shadow-lg hover:shadow-2xl hover:bg-white/90 transition-all duration-300 hover:-translate-y-2 flex flex-col h-full ${
+              className={`no-hover-mobile bg-white/80 backdrop-blur-md p-8 rounded-2xl border border-white/30 shadow-lg hover:shadow-2xl hover:bg-white/90 transition-all duration-300 hover:-translate-y-2 flex flex-col h-full ${
                 index === 0 ? "lg:row-span-2 lg:col-span-1" : ""
               }`}
               style={{ animationDelay: `${index * 0.1}s` }}
