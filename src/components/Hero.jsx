@@ -53,7 +53,12 @@ const Hero = () => {
                 style={{ backgroundColor: "#ff6347" }}
               >
                 <TextRotate
-                  texts={["in seconds", "in 3 modes", "100% free"]}
+                  texts={[
+                    "in seconds",
+                    "in 3 modes",
+                    "100% free",
+                    "seamlessly",
+                  ]}
                   rotationInterval={2500}
                 />
               </span>
