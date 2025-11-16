@@ -1,20 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useForm, ValidationError } from "@formspree/react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const [feedbackText, setFeedbackText] = useState("");
+  const [state, handleSubmit] = useForm("myzlpdan");
+  const [showSuccess, setShowSuccess] = useState(false);
 
-  const submitFeedback = (e) => {
-    e.preventDefault();
-    const body = feedbackText;
-    const mailto = `mailto:feedback@outliner.app?subject=${encodeURIComponent(
-      "Outliner website feedback"
-    )}&body=${encodeURIComponent(body)}`;
-    // Use mailto as a fallback so no backend is required.
-    window.location.href = mailto;
-    // clear form after launching mail client
-    setFeedbackText("");
-  };
+  useEffect(() => {
+    if (state.succeeded) {
+      setShowSuccess(true);
+      const timer = setTimeout(() => setShowSuccess(false), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [state.succeeded]);
   return (
     <footer className="bg-gray-900 text-gray-300 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -106,20 +104,46 @@ const Footer = () => {
                 className="w-6 h-6 ml-3"
               />
             </div>
-            <form onSubmit={submitFeedback} className="space-y-3">
+            <form onSubmit={handleSubmit} className="space-y-3">
+              {showSuccess && (
+                <p className="text-green-300 font-semibold mb-4">
+                  ✓ Thanks for your feedback!
+                </p>
+              )}
+              <input
+                id="email"
+                type="email"
+                name="email"
+                placeholder="Your email (optional)"
+                className="w-full p-3 rounded bg-gray-800 text-gray-100"
+              />
+              <ValidationError
+                prefix="Email"
+                field="email"
+                errors={state.errors}
+                className="text-red-400 text-sm"
+              />
+
               <textarea
-                value={feedbackText}
-                onChange={(e) => setFeedbackText(e.target.value)}
+                id="message"
+                name="message"
                 required
                 rows={4}
                 placeholder="Tell us what you liked or how we can improve..."
                 className="w-full p-3 rounded bg-gray-800 text-gray-100 md:min-h-[160px]"
               />
+              <ValidationError
+                prefix="Message"
+                field="message"
+                errors={state.errors}
+                className="text-red-400 text-sm"
+              />
 
               <div className="flex items-center justify-between w-full">
                 <button
                   type="submit"
-                  className="flex items-center px-4 py-2 rounded font-bold text-black"
+                  disabled={state.submitting}
+                  className="flex items-center px-4 py-2 font-bold text-black disabled:opacity-50"
                   style={{
                     backgroundColor: "tomato",
                     fontFamily:
