@@ -27,6 +27,7 @@ const CardSticky = React.forwardRef(
       index,
       incrementY = 10,
       incrementZ = 10,
+      stepNumber,
       children,
       className,
       style,
@@ -50,7 +51,14 @@ const CardSticky = React.forwardRef(
         className={cn("sticky", className)}
         {...props}
       >
-        {children}
+        {stepNumber && (
+          <span className="pointer-events-none absolute -bottom-4 right-5 text-[64px] md:text-[88px] font-extrabold text-blue-600/30 dark:text-blue-400/40 select-none z-0">
+            {stepNumber}
+          </span>
+        )}
+        <div className="relative z-10">
+          {children}
+        </div>
       </motion.div>
     );
   }

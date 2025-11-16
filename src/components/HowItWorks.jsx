@@ -53,7 +53,7 @@ const HowItWorks = () => {
   return (
     <section
       id="howitworks"
-      className="relative min-h-screen bg-white pt-32 pb-20 px-4 sm:px-6 lg:px-8"
+      className="relative min-h-screen bg-white pt-20 pb-20 px-4 sm:px-6 lg:px-8"
     >
       {/* Background blobs (like Hero) */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -71,7 +71,10 @@ const HowItWorks = () => {
         <div className="grid md:grid-cols-2 md:gap-8 xl:gap-12">
           {/* Left Side - Sticky Header */}
           <div className="left-0 top-0 md:sticky md:h-screen md:pt-8 flex flex-col justify-start px-4 md:pl-20 lg:pl-24">
-            <h5 className="text-xs uppercase tracking-wide text-gray-600 mb-2 bungee-regular">
+            <div className="flex items-center gap-2 mb-1">
+              <img src="/quote.png" alt="quote" className="w-14 h-14 -ml-2" />
+            </div>
+            <h5 className="text-xl uppercase tracking-wide text-orange-700 mb-2 ml-1 bungee-regular">
               How It Works
             </h5>
             <h2 className="mb-8 text-4xl lg:text-5xl font-extrabold tracking-tight text-gray-900 bungee-regular">
@@ -82,11 +85,12 @@ const HowItWorks = () => {
             </h2>
             {/* Compact 'Follow these steps' with right-arrow icon (visible on mobile + desktop) */}
             <div className="flex items-center gap-4 text-gray-700 font-semibold mb-12 text-lg lg:text-2xl">
-              <span className="lobster-regular">Follow these steps</span>
+              <span className="font-mono font-bold self-center">Follow these steps</span>
               <img
                 src="/right-arrow.png"
                 alt="arrow"
-                className="w-6 h-6 lg:w-10 lg:h-10"
+                className="w-8 h-8 lg:w-10 lg:h-10 self-center ml-2"
+                style={{ filter: 'drop-shadow(1px 1px 0 #0002)' }}
               />
             </div>
 
@@ -104,13 +108,14 @@ const HowItWorks = () => {
               <CardSticky
                 key={step.id}
                 index={index + 2}
+                stepNumber={step.number}
                 className="w-full sm:max-w-xl lg:max-w-[380px] xl:max-w-[480px] rounded-2xl border-2 border-white/50 p-5 shadow-xl backdrop-blur-md bg-white/80 hover:bg-white transition-all duration-300 mx-auto"
               >
-                <div className="flex items-start gap-3 mb-4">
+                <div className="flex items-center gap-3 mb-4">
                   <img
                     src={step.icon}
                     alt={step.title}
-                    className="w-8 h-8 object-contain flex-shrink-0 mt-1"
+                    className="w-8 h-8 object-contain flex-shrink-0"
                   />
                   <div className="flex-1">
                     <div className="flex items-baseline gap-3">
