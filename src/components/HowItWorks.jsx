@@ -53,7 +53,7 @@ const HowItWorks = () => {
   return (
     <section
       id="howitworks"
-      className="relative min-h-screen bg-white pt-10 sm:pt-16 pb-20 px-4 sm:px-6 lg:px-8"
+      className="relative min-h-screen bg-white pt-32 pb-20 px-4 sm:px-6 lg:px-8"
     >
       {/* Background blobs (like Hero) */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -71,10 +71,7 @@ const HowItWorks = () => {
         <div className="grid md:grid-cols-2 md:gap-8 xl:gap-12">
           {/* Left Side - Sticky Header */}
           <div className="left-0 top-0 md:sticky md:h-screen md:pt-8 flex flex-col justify-start px-4 md:pl-20 lg:pl-24">
-            <h5
-              className="text-xs uppercase tracking-wide text-red-600 mb-2
-            bungee-regular"
-            >
+            <h5 className="text-xs uppercase tracking-wide text-gray-600 mb-2 bungee-regular">
               How It Works
             </h5>
             <h2 className="mb-8 text-4xl lg:text-5xl font-extrabold tracking-tight text-gray-900 bungee-regular">
@@ -85,7 +82,7 @@ const HowItWorks = () => {
             </h2>
             {/* Compact 'Follow these steps' with right-arrow icon (visible on mobile + desktop) */}
             <div className="flex items-center gap-4 text-gray-700 font-semibold mb-12 text-lg lg:text-2xl">
-              <span className="bungee-regular ml-2">Follow these steps</span>
+              <span className="lobster-regular">Follow these steps</span>
               <img
                 src="/right-arrow.png"
                 alt="arrow"
@@ -109,11 +106,11 @@ const HowItWorks = () => {
                 index={index + 2}
                 className="w-full sm:max-w-xl lg:max-w-[380px] xl:max-w-[480px] rounded-2xl border-2 border-white/50 p-5 shadow-xl backdrop-blur-md bg-white/80 hover:bg-white transition-all duration-300 mx-auto"
               >
-                <div className="flex items-center sm:items-start gap-3 mb-4">
+                <div className="flex items-start gap-3 mb-4">
                   <img
                     src={step.icon}
                     alt={step.title}
-                    className="w-8 h-8 object-contain flex-shrink-0"
+                    className="w-8 h-8 object-contain flex-shrink-0 mt-1"
                   />
                   <div className="flex-1">
                     <div className="flex items-baseline gap-3">
