@@ -96,7 +96,7 @@ const FAQ = () => {
             >
               <button
                 className={
-                  "w-full flex justify-between items-center p-6 text-left focus:outline-none bg-[tomato] " +
+                  "w-full flex justify-between items-center p-4 sm:p-6 text-left focus:outline-none bg-[tomato] " +
                   (open === idx ? "border-b-0" : "")
                 }
                 onClick={() => setOpen(open === idx ? null : idx)}
