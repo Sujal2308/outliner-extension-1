@@ -85,12 +85,14 @@ const HowItWorks = () => {
             </h2>
             {/* Compact 'Follow these steps' with right-arrow icon (visible on mobile + desktop) */}
             <div className="flex items-center gap-4 text-gray-700 font-semibold mb-12 text-lg lg:text-2xl">
-              <span className="font-mono font-bold self-center">Follow these steps</span>
+              <span className="font-mono font-bold self-center">
+                Follow these steps
+              </span>
               <img
                 src="/right-arrow.png"
                 alt="arrow"
                 className="w-8 h-8 lg:w-10 lg:h-10 self-center ml-2"
-                style={{ filter: 'drop-shadow(1px 1px 0 #0002)' }}
+                style={{ filter: "drop-shadow(1px 1px 0 #0002)" }}
               />
             </div>
 

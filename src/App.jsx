@@ -2,6 +2,7 @@ import React from "react";
 import Hero from "./components/Hero";
 import Features from "./components/Features";
 import HowItWorks from "./components/HowItWorks";
+import FAQ from "./components/FAQ";
 import Modes from "./components/Modes";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
@@ -13,6 +14,7 @@ function App() {
       <Features />
       <Modes />
       <HowItWorks />
+      <FAQ />
       <CTA />
       <Footer />
     </div>
